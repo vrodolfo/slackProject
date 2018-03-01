@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static '../static/style.css' %}">
+	<title>Slack APP</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to Rodolfo's Slack Communication Pipe!</h1>
+		<div class="slack">
+			<h2>Send Message to my Slack Channel</h2>
+			{% if responseSlack %}
+				<p class="response">{{responseSlack}}</p>
+			{% endif %}
+			<form action="/slack/send" method="post">
+			{% csrf_token %}
+				<table>
+					<tr>
+						<td>Message:</td>
+						<td><input class="content" type="text" name="contentSlack" id="contentSlack" maxlength="50"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button>Send Message To Slack</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<br><br>
+		
+		<div class="slack">
+			<h2>Send an SMS message</h2>
+			{% if responseTwilio %}
+				<p class="response">{{responseTwilio}}</p>
+			{% endif %}
+			<form action="/twilio/send" method="post">
+			{% csrf_token %}
+				<table>
+					<tr>
+						<td>To:</td>
+						<td>
+							<input class="countryCode" type="text" disabled="disabled" maxlength="50" value="+1">
+							<input class="phone" type="number" maxlength="10" name="phone" id="phone">
+						</td>
+					</tr>
+					<tr>
+						<td>Message:</td>
+						<td><input class="content" type="text" name="contentTwilio" id="contentTwilio" maxlength="50"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button>Send SMS</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+</body>
+</html>

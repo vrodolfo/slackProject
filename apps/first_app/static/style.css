@@ -1,0 +1,74 @@
+body{
+	background-color: #6C6D69;
+	font-family: arial;
+}
+
+h1{
+	color:purple;
+}
+
+h2{
+	color:#BE29EC;
+}
+
+h3{
+	color:white;
+}
+
+input{
+	height: 30px;
+	border-radius: 5px;
+}
+
+button{
+	width: 380px;
+	margin-top: 10px;
+	color:white;
+	background-color: #100E11;
+	border-radius: 5px;
+	border: 3px solid white;
+	height: 50px;
+	font-size: 18px;
+}
+
+.response{
+	color: green;
+	font-size: 20px;
+}
+
+.slack{
+	margin: 0 auto;
+	width: 500px;
+}
+
+button:hover{
+	background-color: black;
+	cursor: pointer;
+	border: 3px solid green;
+	color:green;
+}
+
+.countryCode{
+	width: 20px;
+}
+
+.phone{
+	width: 270px;
+}
+
+.container{
+	width: 900px;
+	height: 600px;
+	margin: 0 auto;
+	padding:30px 0 0 30px;
+	background-color: #100E11;
+}
+
+td{
+	color:white;
+	font-size: 17px;
+}
+
+.content{
+	width: 300px;
+}
